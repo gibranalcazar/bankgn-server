@@ -2,11 +2,19 @@ const express   = require('express');
 const app       = express();
 const cors      = require('cors');
 var dal         = require('./dal.js');
+require('dotenv').config();
 //const connectDb = require('./src/database');
 
 //app.use(express.static('../client/public'));
 app.use(express.static('../client/build'));
 app.use(cors());
+
+console.log(process.env.ALLOWED_ORIGINS);
+/* app.use(cors(
+    {
+      origin: process.env.ALLOWED_ORIGINS
+    }
+  )); */
 
 
 // Create user account
